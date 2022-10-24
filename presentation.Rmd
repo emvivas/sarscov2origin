@@ -1,0 +1,515 @@
+---
+title: "Análisis del origen de SARS-COV 2, ¿cómo pudo haber comenzado esta pandemia?"
+author: "Emiliano Vivas Rodríguez, a01424732@tec.mx"
+date: "6 de mayo de 2022."
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+  word_document: default
+---
+
+<style>
+
+  body {
+    text-align: justify;
+  }
+
+  h1, h2, h3 {
+    padding: 50px 0px 35px 0px;
+  }
+
+  h1 {
+    font-weight: bold;
+  }
+
+  img {
+    width: 100%;
+    display:block;
+    margin:auto;
+    padding: 35px;
+  }
+
+  p{
+    text-indent:10mm;
+  }
+  
+</style>
+
+```{r echo=FALSE}
+load("analysis.RData");
+```
+
+___
+
+## Un virus distinto a otros.
+
+  El 31 de diciembre de 2019 se detectó en la ciudad de Wuhan (China) un brote de neumonía de etiología desconocida. Una semana después se aisló en estos pacientes un nuevo coronavirus, designado inicialmente como 2019-nCoV y posteriormente, SARS-CoV-2. Este es un nuevo virus que está mucho más próximo genéticamente a los coronavirus de los murciélagos que del SARS humano. El nuevo virus infecta y se replica en los neumocitos y macrófagos del parénquima pulmonar en los que reside el receptor celular ACE-2. Ha infectado en estos momentos muchas más personas que sus predecesores (> 85.000). Desde el punto de vista clínico, los infectados presentan una edad media de 55 años; los síntomas principales son fiebre, tos seca, linfopenia, disnea, y neumonía en su forma grave. La tasa de letalidad global se sitúa en el 2-3% en China y en el 0,1% en los casos detectados fuera de este país. El período de incubación se ha establecido en unos 3 días (0-24 días).
+
+  En febrero de 2018 la Organización Mundial de la Salud (OMS) anunció una lista de enfermedades prioritarias que deberían ser estudiadas en profundidad. Entre ellas se encontraba el SARS (severe acute respiratory syndrome) y el MERS (middle east respiratory syndrome), así como lo que se clasificó como «enfermedad X». Esta enfermedad se definía como una nueva patología humana con potencial epidémico o pandémico causada por un patógeno desconocido. En estos momentos deberíamos considerar al nuevo coronavirus (SARS-CoV-2) como la primera enfermedad X (neumonía de Wuhan).
+
+  Hasta 2019 se conocía la existencia de dos coronavirus que también habían infectado de forma epidémica a la población humana. El SARS-CoV apareció en 2002 en la provincia china de Guangdong y se extendió por todo el sudeste asiático. El último caso confirmado fue en septiembre de 2003. Este virus infectó a unas 8.000 personas y causó 774 fallecimientos (tasa de letalidad del 9,5%). Su índice de contagiosidad (Ro) presentó un valor de cerca de 4, lo que facilitó su rápida expansión.
+
+  En 2012 apareció en Oriente Medio un nuevo coronavirus que causó procesos respiratorios graves y que fue designado como MERS-CoV. En todos los casos en que está implicado este virus puede encontrarse un vínculo epidemiológico con la península arábiga, aunque un importante brote se exportó a Corea del Sur. A diferencia del SARS-CoV, el MERS-CoV sigue circulando en la actualidad y presenta una tasa de letalidad cercana al 35% y un Ro no superior a 1, y por ello no ha mostrado una capacidad de difusión excesiva, estando confinado a la zona geográfica de origen.
+  
+### Secuencias codificantes de los genes de `r finalVirus`.
+```{r echo=FALSE}
+data[data$virus==finalVirus, ];
+```
+Severe acute respiratory syndrome coronavirus 2 isolate Wuhan-Hu-1, complete genome.
+NCBI Reference Sequence: NC_045512.2
+
+
+### Secuencias codificantes de los genes de `r originVirus[2]`.
+```{r echo=FALSE}
+data[data$virus==originVirus[2], ];
+```
+Middle East respiratory syndrome-related coronavirus isolate HCoV-EMC/2012, complete genome.
+NCBI Reference Sequence: NC_019843.3
+
+
+### Secuencias codificantes de los genes de `r originVirus[1]`.
+```{r echo=FALSE}
+data[data$virus==originVirus[1], ];
+```
+Bat coronavirus RaTG13, complete genome.
+GenBank: MN996532.1
+ 
+___
+
+## Orígenes del COVID-19.
+
+  El 31 de diciembre de 2019 se detectó en la ciudad de Wuhan (China) un brote de neumonía de etiología desconocida que fue rápidamente comunicado a la OMS. Una semana después, el 7 de enero de 2020 se aisló de estos pacientes un nuevo coronavirus, designado inicialmente como 2019-nCoV. El 11 de febrero de 2020 la OMS estableció el nombre de la enfermedad como COVID-19 (coronavirus disease-2019) y se designó provisionalmente al coronavirus causante como SARS-CoV-2. Sin embargo, Jiang et al. han sugerido que se denomine como PARS (pneumonia-associated respiratory syndrome) y al nuevo coronavirus como PARS-CoV, para mantener la terminología utilizada en los dos anteriores coronavirus. Pero tras algunas discrepancias han sugerido designar a esta nueva enfermedad como TRAS (transmisible acute respiratory syndrome) y al virus como TRAS-CoV; sin embargo, esta designación no ha sido confirmada. Debemos pues considerar que nos encontramos frente a la tercera epidemia zoonótica causada por un coronavirus en el siglo XXI; por ello la OMS declaró el 30 de enero de 2020 que esta enfermedad era una emergencia internacional de salud para que todos los países se prepararan para la misma.
+  
+   Los coronavirus son capaces de infectar al ser humano, pero sus huéspedes naturales preferentes lo constituyen multitud de especies animales (mamíferos, aves), debiendo considerarse su infección humana como una zoonosis. Fueron descritos por primera vez en 1966 a partir de las secreciones nasales de un paciente con rinitis. Los incluidos en el grupo de los alfa-coronavirus como el 229E (1a) y el NL63 (1b) producen infecciones respiratorias leves o moderadas, mientras que algunos de los miembros del grupo beta-coronavirus como el OC43 (2a) y el HKU1 (2a) también producen este tipo de infecciones. Mientras que el resto de este subgrupo, como el SARS-CoV (2b) y el SARS-CoV-2 (2b) y el MERS-CoV (2c) son causantes de epidemias e infecciones respiratorias graves.
+  
+```{r echo=FALSE}
+graphic3b;
+```
+
+```{r echo=FALSE}
+graphic3a;
+```
+
+
+  El SARS-CoV-2 es un nuevo virus que pertenece a la subfamilia Orthocoronavirinae, género Coronavirus y al subgénero Sarbecovirus (beta-coronavirus, beta-2b) y dentro de ellos al clado o linaje 2, que está mucho más próximo genéticamente a los coronavirus de los murciélagos que del SARS humano. El genoma del SARS-CoV-2 está formado por un ARN de una sola cadena de unos 30.000 nucleótidos y 6 ORF (open reading frames), idénticos al resto de coronavirus, y varios genes adicionales. La mayoría de estos genes solo presentan una homología del 80% con el antiguo virus SARS-CoV; sin embargo, los genes implicados en la replicación (ORF1ab) presentan una homología del 94% con este virus. A pesar de ello la secuenciación completa de los genomas de los coronavirus detectados en pacientes, y especialmente el gen de la ARN-polimerasa ARN-dirigida (RpRd) y el gen S (espícula externa), muestran que las cepas humanas constituyen un linaje distinto del SARS-CoV, pero muy cercano al linaje detectado en algunos murciélagos (BatCoV RaTG13). La proteína S del nuevo coronavirus presenta < 75% de semejanza con la de los otros coronavirus conocidos pero una identidad del 93% con la procedente del coronavirus del murciélago. Estas semejanzas genéticas parecen confirmar el origen del SARS-CoV-2, que sería algún murciélago salvaje de la zona. Según Zhou et al. este coronavirus sería un recombinante genético entre una cepa de murciélago (80-85%) y el de otra especie animal (quizás el del huésped intermediario).
+  
+### Cambios en secuencias codificantes del genoma de `r finalVirus` con respecto a `r originVirus[1]`.
+```{r echo=FALSE}
+mutations
+```
+  
+
+### Cambios en secuencias codificantes del genoma de `r finalVirus` con respecto a `r originVirus[2]`.
+```{r echo=FALSE}
+mutations2;
+```
+
+
+```{r echo=FALSE}
+graphic1a;
+```
+
+
+```{r echo=FALSE}
+graphic1b;
+```
+
+
+```{r echo=FALSE}
+graphic2a;
+```
+
+```{r echo=FALSE}
+graphic2b;
+```
+
+  La proteína S de la superficie de los coronavirus es la encargada de su unión al receptor celular y del proceso de fusión con la misma, determinando con ello el tropismo y la capacidad de transmisión en un nuevo huésped, además de ser el antígeno inmunodominante y el reconocido más intensamente por el sistema inmune del huésped. Para que la proteína S pueda ejercer su función debe ser hidrolizada por las proteasas pulmonares dando lugar al fragmento S1, responsable de la unión al receptor, y al fragmento S2, responsable del proceso de fusión. A pesar de que el SARS-CoV y el SARS-CoV-2 se encuentran en diferentes linajes genéticos, poseen alrededor de 50 aminoácidos conservados en la posición S1, mientras que la mayoría de los procedentes de murciélagos muestran importantes variaciones antigénicas en esta zona sensible.
+
+  La capacidad de la proteína S1 para unirse a la célula se localiza en el dominio C-terminal de la misma. Los estudios filogenéticos de esta zona han demostrado que la perteneciente al SARS-CoV-2 es casi idéntica a la del SARS-CoV y está más alejada de la cepa homóloga del murciélago, lo cual hace pensar en un proceso evolutivo de adaptación a los receptores de las células humanas siguiendo el mismo proceso que hizo el SARS-CoV en 2002. Al igual que muchos otros virus con genoma ARN, la tasa de mutación de los coronavirus es de 10- sustituciones nucleotídicas/por posición/año, produciéndose básicamente en los primeros ciclos replicativos. Es por ello sorprendente que las secuencias genéticas de los SARS-CoV-2 de diferentes pacientes sean absolutamente idénticas (99,9%). Este dato sugiere que este nuevo coronavirus se originó de una única fuente en un período de tiempo muy corto y fue detectado de forma muy precoz en los primeros días de su diseminación humana.
+
+  El SARS-CoV-2 infecta y se replica de forma eficiente en los neumocitos, macrófagos y células dendríticas de las partes más profundas del parénquima pulmonar en las que reside el receptor celular ACE-2 (angiotensin converting enzyme II) que es utilizado por este virus para unirse a estas células e iniciar el proceso infeccioso. Este receptor celular es el mismo que utilizó el SARS-CoV para infectar al ser humano; de modo que la patofisiología del nuevo coronavirus a nivel pulmonar probablemente sea muy parecida, con un predominio evidente de las neumonías graves y baja afectación del tracto respiratorio superior.
+
+  El estudio reciente de Wan et al. indica la posibilidad de que una única mutación en la posición N501T de la proteína S1 pueda incrementar de forma significativa la capacidad para unirse al receptor ACE2; debiendo monitorizarse la evolución de la misma. Así mismo ha comprobado, de acuerdo con la afinidad de la proteína S1 por el ACE2, que el nuevo coronavirus no es capaz de infectar a la civeta (intermediario del SARS-CoV) ni tampoco a los ratones, por ello no se podrán utilizar como modelos experimentales salvo que se modifiquen genéticamente. Los animales que sí han mostrado capacidad para ser infectados por el SARS-CoV-2 son los cerdos, hurones, gatos y primates no humanos, de modo que podrían ser huéspedes intermediarios y/o modelos de experimentación.
+  
+```{r echo=FALSE}
+graphic4b;
+```
+
+```{r echo=FALSE}
+graphic4a;
+```
+
+
+  De acuerdo con los conocimientos obtenidos con los coronavirus causantes del SARS y el MERS, también el SARS-CoV-2 debería presentar como reservorio natural alguna de las múltiples especies de murciélagos que habitan el sudeste asiático, o quizás en la profundidad de África. Los análisis genéticos y filogenéticos han mostrado su elevada relación con varios coronavirus de estos mamíferos y muy estrechamente con los relacionados con el causante del SARS.
+
+  A pesar de la importancia de los murciélagos en la biología evolutiva de los coronavirus, en el caso del nuevo coronavirus no parece que se haya producido el paso directo desde este animal al ser humano. Las principales razones que apoyan este hecho son que: (a) el brote se inició a finales de diciembre de 2019, período en el cual la mayoría de especies de murciélagos de la región de Wuhan están hibernando; (b) según los epidemiólogos chinos en el mercado de Huanan (Wuhan) no se encontraron ni se vendían murciélagos, ya que era de pescado y mariscos, aunque sí se encontraron otros mamíferos convencionales; (c) la identidad de la secuencia genética del SARS-CoV-2 y su homóloga bat-SL-CoVZC45 es inferior al 90%, lo cual indica que forma una rama filogenética distinta del humano, por lo que este virus del murciélago y su semejante (bat-SL-CoVZC21) no se pueden considerar como los ancestros directos del humano; y (d) en los coronavirus previos causantes de epidemias humanas siempre se pudo encontrar un huésped intermedio, por lo tanto en este caso también debe de existir.
+
+  Dos especies animales parecen por ahora ser los candidatos a huésped intermediario, algunas serpientes o un mamífero con escamas denominado pangolín. El estudio de Ji et al. ha postulado que el nuevo coronavirus es una cepa recombinante entre una procedente del murciélago y otra de algunas especies de serpiente de la zona epidémica y que la zona afectada corresponde a los nucleótidos 21.500-24.000 del gen que codifica la proteína S1 (determinante del tropismo humano). La secuencia de este reptil le habría permitido al nuevo virus adquirir la capacidad para infectar al ser humano. Sin embargo, es la primera vez que se describen a las serpientes como huéspedes de los coronavirus y el análisis de Robertson y Jiang no confirma los hallazgos previos. Por otro lado, Lam et al., mediante análisis metagenómicos, han descrito por primera vez la presencia de secuencias genéticas en el pangolín de Malasia (Manis javanica) filogenéticamente relacionadas con el SARS-CoV-2, especialmente en la secuencia que codifica la proteína S de unión al receptor ACE2 celular. Estos autores consideran que este mamífero debería ser considerado como el huésped intermediario y retirarlo de los mercados para prevenir nuevas transmisiones zoonóticas.
+
+  El diagnóstico específico de la infección por el SARS-CoV-2 debe realizarse mediante una PCR-real time que detecte las dianas específicas de este virus (genes NP y E), junto al gen común de la ARN-polimerasa (RpRd). La serología podría ser útil para conocer los casos asintomáticos y para los estudios de seroprevalencia dentro de una población determinada. Este diagnóstico serológico (ELISA para IgG e IgM) se ha diseñado utilizando la nucleoproteína (NP) del coronavirus del murciélago que presenta una identidad genética del 92% y no muestra reacción cruzada con la del resto de coronavirus. También puede utilizarse como metodología diagnóstica el aislamiento de este virus en cultivos celulares utilizando las líneas Vero y Huh7. El efecto citopático se detecta a los 3 días de incubación y puede detectarse mediante una inmunofluorescencia dirigida contra la NP.
+  
+  
+```{r echo=FALSE}
+graphic5b;
+```
+
+```{r echo=FALSE}
+graphic5a;
+```
+
+```{r echo=FALSE}
+graphic6b;
+```
+
+```{r echo=FALSE}
+graphic6a;
+```
+
+```{r echo=FALSE}
+graphic7b;
+```
+
+```{r echo=FALSE}
+graphic7a;
+```
+
+
+  Un estudio realizado por Zhang et al. en 15 pacientes confirma la presencia del SARS-CoV-2 en la faringe, heces y sangre de los mismos, de modo que podría transmitirse por estas tres rutas, aunque su presencia se ha detectado sólo por biología molecular y no puede asegurarse su capacidad infectiva en un nuevo huésped. También han observado como pacientes con frotis faríngeo negativo se podía detectar el virus en las heces, especialmente a los 4-5 días de inicio de la sintomatología, produciéndose un paso secuencial oro-fecal. Según estos autores no podría descartarse la infección con solo un frotis faríngeo negativo, aunque la vía aérea sigue siendo la principal ruta de transmisión del virus. Además en todos los pacientes se pudo detectar la presencia de respuesta inmune en forma de IgM e IgG específicas.
+
+  El SARS-CoV-2 ha infectado en estos momentos muchas más personas que sus predecesores (> 85.000). Varios factores parecen haber favorecido esta rápida expansión; por una parte, que el epicentro del brote, la ciudad de Wuhan, presenta unos 11 millones de habitantes y es el principal nudo de comunicaciones de la provincia de Hubei, lo cual facilita los contactos persona-persona y la exportación de casos a otras ciudades. Los datos estimados de su Ro están en 2-3,5, de modo que cada paciente puede infectar a 2 o 3 personas nuevas. Este valor es parecido al SARS (Ro 2-5) y mucho mayor que el del MERS (Ro < 1), pero el número de personas infectadas por nuevo coronavirus por trasmisión interhumana es unas 3-10 veces superior que los virus previos.
+
+  Desde el punto de vista clínico, las personas con COVID-19 presentan una edad media de 55 años. Los síntomas principales son fiebre (87,9%), tos seca (67,7%), linfopenia (82,1%), disnea, y neumonía en su forma grave; mientras que la diarrea es infrecuente. La tasa de letalidad global se sitúa en el 2-3% en China y es del 0,1% en los casos detectados fuera de este país. El período de incubación se ha establecido en unos 3 días (intervalo 0-24 días). El análisis clínico y epidemiológico posterior de 1.099 casos confirmados por laboratorio ha mostrado que la edad media de los pacientes es algo menor (47 años) y que el 58,1% son hombres. De ellos solo el 1,18% habían tenido contacto directo con animales silvestres, un 31,3% eran residentes de Wuhan y un 71,8% eran contactos con personas de esta ciudad. En el último informe del CDC de China sobre 72.314 pacientes, de los cuales solo el 61,8% fueron confirmados por el laboratorio, el 22,4% eran casos sospechosos, el 14,6% casos diagnosticados clínicamente y el 1,2% asintomáticos. Entre los casos confirmados la edad se situó entre 30-79 años (86,6%); el 80,9% se consideraron como casos moderados o leves, el 13,8% graves y el 4,7 muy graves, de los cuales fallecieron el 2,3%. Se infectaron 1.716 trabajadores de la salud con un 0,3% de letalidad.
+
+  Los primeros casos descritos a principios de enero de 2020 estaban epidemiológicamente vinculados a un mercado de pescados y animales vivos en la ciudad de Wuhan; pero a partir de finales de este mes la trasmisión pasó a ser eminentemente persona-persona. Este dato confirma la elevada capacidad de este coronavirus para adaptarse al ser humano y trasmitirse eficientemente entre ellos. Probablemente en esta adaptación hayan participado fenómenos genéticos de adaptabilidad, mutación y recombinación con cepas animales previas, de las que surgió la nueva cepa con especial tropismo por el ser humano. Al ser un virus nuevo para el ser humano, no para el mundo virológico natural, la población carecía de inmunidad previa y por ello se inició el proceso de expansión epidémico de la misma.
+
+  La presencia del virus en la orofaringe con elevada carga viral incluso antes de la aparición de los síntomas, aunque sin una demostrada capacidad replicativa en esta zona, es la que determina la transmisibilidad del virus. Evidentemente asociada a los mecanismos que facilitan la expansión de los mismos como la tos, estornudo y expectoración, sin olvidar el importante papel del contacto directo a través de las manos u otros fómites de la persona infectada. Zou et al. han analizado la carga viral del SARS-CoV-2 en la faringe y fosas nasales de personas sintomáticas y no sintomáticas y han observado que las cargas más elevadas se detectan a partir del momento de inicio de los síntomas y que es algo mayor en las fosas nasales. Es especialmente relevante el dato de que la carga viral de las personas asintomáticas es muy similar a la de los sintomáticos y puede persistir en algunas ocasiones hasta 5 días, lo cual apoya la posible transmisión eficiente de este tipo de personas.
+
+  Los estudios de reconstrucción genética ancestral realizados por Li et al. en 12 secuencias genómicas humanas del nuevo virus parecen indicar que este virus ya circulaba por Wuhan el 9 de noviembre de 2019, sin embargo, con un intervalo de credibilidad del 95%, que lo sitúa entre el 25 de septiembre y el 19 de diciembre de 2019; de este modo el mercado y la posible presencia de superpropagadores determinaron la rápida difusión y expansión del virus entre los asistentes al mismo.
+
+  Mientras que en el SARS la transmisibilidad solo se producía desde el inicio de la aparición de síntomas, fiebre y respiratorios, parece que el SARS-CoV-2 puede hacerlo, como se ha mencionado, días antes de los síntomas, incluso se ha apuntado la posibilidad de que existan propagadores o transmisores asintomáticos con un largo período excretor.
+
+  Parece que el SARS-CoV-2 se presentaría con tres patrones clínicos, más allá de los casos asintomáticos: (a) una infección moderada del tracto respiratorio superior con síntomas leves; (b) una neumonía clínica y radiológicamente evidente; y (c) una neumonía grave asociada a distress respiratorio que podría progresar hacia la insuficiencia respiratoria y fallecimiento del paciente (esa letalidad del 2%). La neumonía grave se presenta preferentemente en varones con edad superior a los 65 años y con comorbilidades como diabetes, patologías pulmonares y cardíacas. Un dato a reseñar es la escasa afectación de la población infantil con edad inferior a los 15 años, sin que exista actualmente una clara explicación fisiológica o virológica. También parece que, aunque el coronavirus infecta a las embarazadas provocándoles neumonía, no se ha descrito la transmisión del virus al feto, y los pocos casos de detección del virus en los neonatos se han debido a trasmisión directa de la madre.
+
+  Clásicamente para identificar a un nuevo virus como causante de una determinada enfermedad se han utilizado los postulados de Koch, que en el caso de los virus fueron modificados por Rivers. En la actualidad los únicos criterios que se cumplen son que el SARS-CoV-2 se ha aislado, detectado por técnicas analíticas (biología molecular) y cultivado in vitro a partir de muestras respiratorias de los pacientes con sospecha de enfermedad respiratoria. Sin embargo, todavía no se dispone de ningún modelo animal que permita cumplir el resto de criterios, como son (a) demostrar la capacidad de este nuevo coronavirus para infectar animales y provocarles la misma enfermedad; (b) re-aislar el virus de los animales infectados experimentalmente; y (c) demostrar una respuesta inmune frente al mismo. A pesar de ello las evidencias virológicas, clínicas y epidemiológicas parecen indicar con cierta seguridad que el SARS-CoV-2 es el agente etiológico de la epidemia de infección respiratoria aguda del sudeste asiático.
+
+  En la actualidad, y ante la ausencia de una vacuna, la única alternativa que puede utilizarse en los pacientes es el tratamiento con fármacos antivirales. Inicialmente se han estudiado, tanto in vitro como en modelos animales, fármacos tales como la ribavirina, el interferón, y la combinación lopinavir-ritonavir; sin embargo, la eficacia de todos ellos es muy controvertida.
+
+  Los análogos de los nucleósidos son una buena alternativa en algunas infecciones víricas. Entre ellos destaca el remdesivir (GS-5734) que ha mostrado eficacia terapéutica en las infecciones causadas por el virus Ébola, Nipah y por los coronavirus SARS y MERS. Los datos de seguridad y biodisponibilidad obtenidos en los pacientes de Ébola pueden ser la base para su utilización en humanos infectados por el SARS-CoV-2. En estos momentos se han iniciado en China varios ensayos clínicos para establecer su eficacia tanto en pacientes no hospitalizados como en casos graves con ingreso hospitalario.
+
+  Estamos pues frente al reto que nos ofrece una nueva pandemia de infección respiratoria aguda causada por un nuevo coronavirus, el SARS-CoV-2. Todavía desconocemos muchos aspectos virológicos, epidemiológicos y clínicos de esta infección, por ello a medida que aparezcan nuevos estudios podremos ir actualizando nuestro conocimiento. Una vez más nos enfrentamos a una nueva pandemia viral sin antivirales específicos ni vacuna, y de nuevo solamente las recomendaciones epidemiológicas clásicas (aislamiento, vigilancia y seguimiento) permitirán hacerle frente como ha ocurrido en otras situaciones parecidas.
+  
+## Script generado durante el proceso del análisis.
+
+Los ficheros de texto (sarscov2.txt, merscov.txt y batcovratg13.txt) hacen referencia a las bases de datos de secuencias genéticas provenientes del NCBI, el Centro Nacional para la Información Biotecnológica de los Estados Unidos de América (NCBI Reference Sequence NC_045512.2, NCBI Reference Sequence NC_019843.3 y GenBank MN996532.1; respectivamente).
+
+
+```{r eval=FALSE, echo=TRUE}
+install.packages(seqinr);
+install.packages(ggplot2);
+install.packages(RecordLinkage);
+library(seqinr);
+library(ggplot2);
+library(RecordLinkage);
+
+AMINOACIDS = c(UUU="FPhe", UUC="FPhe", UUA="LLeu", UUG="LLeu", UCU="SSer", UCC="SSer", UCA="SSer", UCG="SSer", UAU="YTyr", UAC="YTyr", UAA='-', UAG='-', UGU="CCys", UGC="CCys", UGA='-', UGG="WTrp", CUU="LLeu", CUC="LLeu", CUA="LLeu", CUG="LLeu", CCU="PPro", CCC="PPro", CCA="PPro", CCG="PPro", CAU="HHis", CAC="HHis", CAA="QGln", CAG="QGln", CGU="RArg", CGC="RArg", CGA="RArg", CGG="RArg", AUU="IIle", AUC="IIle", AUA="IIle", AUG="MMet", ACU="TThr", ACC="TThr", ACA="TThr", ACG="TThr", AAU="NAsn", AAC="NAsn", AAA="KLys", AAG="KLys", AGU="SSer", AGC="SSer", AGA="RArg", AGG="RArg", GUU="VVal", GUC="VVal", GUA="VVal", GUG="VVal", GCU="AAla", GCC="AAla", GCA="AAla", GCG="AAla", GAU="DAsp", GAC="DAsp", GAA="EGlu", GAG="EGlu", GGU="GGly", GGC="GGly", GGA="GGly", GGG="GGly");
+SARSCov2 = read.fasta("sarscov2.txt");
+RaTG13 = read.fasta("batcovratg13.txt");
+MERSCov = read.fasta("merscov.txt");
+finalVirus = "SARS-Cov 2";
+originVirus = c("RaTG13", "MERS-Cov");
+data = data.frame(virus = character(), gene = character(), protein = character(), length = integer(), initialLocation = integer(), finalLocation = integer(), nucleotids = character(), aminoacids = character());
+mutations = data.frame(mutation = character(), nucleotide = numeric(), codon = character(), protein = character(), index = numeric(), structure = character(), gene = character(), change = logical());
+mutations2 = data.frame(mutation = character(), nucleotide = numeric(), codon = character(), protein = character(), index = numeric(), structure = character(), gene = character(), change = logical());
+similarity = data.frame(type=character(), originVirus=character(), finalVirus=character(), gene=character(), nucleotidePercentage = numeric(), aminoacidPercentage=numeric());
+
+needleman = function(seq1, seq2, gap, mismatch, match){
+  stopifnot(gap <= 0);
+  stopifnot(mismatch <= 0);
+  stopifnot(match >= 0);
+  len1 = nchar(seq1); len2 = nchar(seq2);
+  seq1 = unlist(strsplit(seq1, split = ""));
+  seq2 = unlist(strsplit(seq2, split = ""));
+  M = matrix(0, nrow = len1 + 1, ncol = len2 + 1);
+  rownames(M) = c("-", seq1);
+  colnames(M) = c("-", seq2);
+  M[1, ] = cumsum(c(0, rep(gap, len2)));
+  M[, 1] = cumsum(c(0, rep(gap, len1)));
+  D = matrix(0, nrow = len1 + 1, ncol = len2 + 1);
+  rownames(D) = c("-", seq1);
+  colnames(D) = c("-", seq2);
+  D[1, ] = rep("\u2190");
+  D[, 1] = rep("\u2191");
+  type = c("\u2190", "\u2191", "\u2b09");
+  for (i in 2:(len1 + 1)){
+    for (j in 2:(len2 + 1)){
+      hor = M[i, j - 1] + gap;
+      ver = M[i - 1, j] + gap;
+      dia = ifelse(rownames(M)[i] == colnames(M)[j], M[i - 1, j - 1] + match, M[i - 1, j - 1] + mismatch);
+      M[i, j] = max(hor, ver, dia);
+      D[i, j] = type[which.max(c(hor, ver, dia))];
+    }
+  } 
+  align1 = c();align2 = c();
+  while(i > 1 && j > 1){
+    if(D[i, j] == "\u2b09") {
+      align1 = c(rownames(M)[i], align1);
+      align2 = c(colnames(M)[j], align2);
+      j = j - 1; i = i - 1;
+    } else if (D[i, j] == "\u2191") {
+      align1 = c(rownames(M)[i], align1);
+      align2 = c("-", align2);
+      i = i - 1;
+    } else if (D[i, j] == "\u2190") {
+      align1 = c("-", align1);
+      align2 = c(colnames(M)[j], align2);
+      j = j - 1;
+    } 
+  }
+  return(list(aligned_seqs = matrix(c(align1, align2), byrow = TRUE, nrow = 2), score = M[nrow(M), ncol(M)], score_matrix = M, movement_matrix = D));
+}
+
+transformingToAminoacids = function(sequence){
+  newSequence = "";
+  for(index in seq(1, length(sequence), 3))
+    newSequence = paste(newSequence, substr(AMINOACIDS[paste(sequence[index], sequence[index+1], sequence[index+2], sep = '', collapse = '')], 1, 1), sep = '', collapse = '');
+  return(newSequence);
+}
+
+gettingMetadata = function(sequence){
+  sequence = unlist(strsplit(attr(sequence,"Annot"), "\\[|\\]|:|=|\\.|join|\\(|\\)|,"));
+  return(sequence[sequence!="" & sequence!=" "]);
+}
+
+registeringData = function(genomeDenomination, genome){
+  for (index in 1:length(genome)){
+    sequence = toupper(genome[[index]]);
+    sequence[sequence == 'T'] = 'U';
+    metadata = gettingMetadata(sequence);
+    data[nrow(data) + 1, ] <<- list(genomeDenomination, metadata[which(metadata=="gene") + 1], metadata[which(metadata=="protein") + 1], as.integer(metadata[which(metadata=="location") + 2]) - as.integer(metadata[which(metadata=="location") + 1]) + 1, as.integer(metadata[which(metadata=="location") + 1]), as.integer(metadata[which(metadata=="location") + 2]), paste(sequence, sep = '', collapse = ''), transformingToAminoacids(sequence));
+  }
+}
+
+analysis = function(indexOriginVirus, index, index2, final){
+  if(data[index, ]$gene==data[index2, ]$gene){
+    origin = data[index2, ]$nucleotids;
+    solution = needleman(data[index, ]$aminoacids, data[index2, ]$aminoacids, gap = -1, mismatch = -1, match = 0);
+    similarity[nrow(similarity) + 1, ] <<- list(paste(data[index, ]$gene, originVirus[indexOriginVirus], finalVirus, sep="_", collapse = ""), originVirus[indexOriginVirus], finalVirus, data[index, ]$gene, round(levenshteinSim(data[index, ]$nucleotids, data[index2, ]$nucleotids)*100,3), round(levenshteinSim(data[index, ]$aminoacids, data[index2, ]$aminoacids)*100, 3));
+    similarity[nrow(similarity) + 1, ] <<- list(paste(data[index, ]$gene, originVirus[indexOriginVirus], finalVirus, sep="_", collapse = ""), originVirus[indexOriginVirus], "Alineamiento A", data[index, ]$gene, "", round(levenshteinSim(data[index, ]$aminoacids, paste(solution$aligned_seqs[1,], sep = '', collapse = ''))*100,3));
+    similarity[nrow(similarity) + 1, ] <<- list(paste(data[index, ]$gene, originVirus[indexOriginVirus], finalVirus, sep="_", collapse = ""), finalVirus, "Alineamiento A", data[index, ]$gene, "", round(levenshteinSim(data[index2, ]$aminoacids, paste(solution$aligned_seqs[1,], sep = '', collapse = ''))*100, 3));
+    similarity[nrow(similarity) + 1, ] <<- list(paste(data[index, ]$gene, originVirus[indexOriginVirus], finalVirus, sep="_", collapse = ""), originVirus[indexOriginVirus], "Alineamiento B", data[index, ]$gene, "", round(levenshteinSim(data[index, ]$aminoacids, paste(solution$aligned_seqs[2,], sep = '', collapse = ''))*100, 3));
+    similarity[nrow(similarity) + 1, ] <<- list(paste(data[index, ]$gene, originVirus[indexOriginVirus], finalVirus, sep="_", collapse = ""), finalVirus, "Alineamiento B", data[index, ]$gene, "", round(levenshteinSim(data[index2, ]$aminoacids, paste(solution$aligned_seqs[2,], sep = '', collapse = ''))*100, 3));
+    for(index3 in 1:nchar(final)){
+      if(substr(final, index3, index3)!=substr(origin, index3, index3)){
+        codon = ceiling(index3/3);
+        finalCodon = substr(final, 3*codon-2, 3*codon);
+        finalCodonDenomination = AMINOACIDS[paste(finalCodon, sep = '', collapse = '')];
+        originCodon = substr(origin, 3*codon-2, 3*codon);
+        originCodonDenomination = AMINOACIDS[paste(originCodon, sep = '', collapse = '')];
+        if(indexOriginVirus==1) {
+          mutations[nrow(mutations)+1, ] <<- list(paste(substr(origin, index3, index3), "to", substr(final, index3, index3), sep = '', collapse = ''), data[index, ]$initialLocation + index3, paste(paste(originCodon, sep = '', collapse = ''), "to", paste(finalCodon, sep = '', collapse = ''), sep = '', collapse = ''), paste(substr(originCodonDenomination, 1, 1), "to", substr(finalCodonDenomination, 1, 1), sep = '', collapse = ''), codon, data[index, ]$protein, data[index, ]$gene, is.na(substr(originCodonDenomination, 1, 1)) | substr(finalCodonDenomination, 1, 1) != substr(originCodonDenomination, 1, 1));
+        } else {
+          mutations2[nrow(mutations2)+1, ] <<- list(paste(substr(origin, index3, index3), "to", substr(final, index3, index3), sep = '', collapse = ''), data[index, ]$initialLocation + index3, paste(paste(originCodon, sep = '', collapse = ''), "to", paste(finalCodon, sep = '', collapse = ''), sep = '', collapse = ''), paste(substr(originCodonDenomination, 1, 1), "to", substr(finalCodonDenomination, 1, 1), sep = '', collapse = ''), codon, data[index, ]$protein, data[index, ]$gene, is.na(substr(originCodonDenomination, 1, 1)) | substr(finalCodonDenomination, 1, 1) != substr(originCodonDenomination, 1, 1));
+        }
+      }
+    }
+  }
+}
+
+registeringData(finalVirus, SARSCov2);
+registeringData(originVirus[1], RaTG13);
+registeringData(originVirus[2], MERSCov);
+for(index in 1:length(SARSCov2)){
+  for(index2 in (length(SARSCov2)+1):(length(SARSCov2)+length(RaTG13)))
+    analysis(1, index, index2, data[index, ]$nucleotids);
+  for(index2 in (length(SARSCov2)+length(RaTG13)+1):(length(SARSCov2)+length(RaTG13)+length(MERSCov)))
+    analysis(2, index, index2, data[index, ]$nucleotids);
+}
+
+graphic1a = ggplot(mutations) + 
+  aes(x=mutation, fill=mutation, label=..count..) +
+  ggtitle(paste("Diferencias totales entre ", originVirus[1], " y ", finalVirus, '.', sep = '', collapse = '')) +
+  labs(x="Diferencia (pseudomutación).", y="Frecuencia.", fill="Pseudomutaciones.") +
+  geom_bar(stat = "count") +
+  geom_text(stat = "count", aes(vjust=1)) +
+  theme(axis.title=element_text(size=10,face="bold"));
+
+graphic2a = ggplot(mutations[mutations$change==TRUE, ]) + 
+  aes(x=mutation, fill=mutation, label=..count..) + 
+  ggtitle(paste("Diferencias significativas entre ", originVirus[1], " y ", finalVirus, '.', sep = '', collapse = '')) + 
+  labs(x="Diferencia (pseudomutación).", y="Frecuencia.", fill="Pseudomutaciones.") + 
+  geom_bar(stat = "count") + 
+  geom_text(stat = "count", aes(vjust=1)) + 
+  theme(axis.title=element_text(size=10,face="bold"));
+
+graphic3a = ggplot(similarity[similarity$nucleotidePercentage>0 & similarity$originVirus==originVirus[1], ], aes(x = gene, y = aminoacidPercentage, fill = type)) +
+  ggtitle(paste("Porcentaje de similitud de genes estructurales entre ", originVirus[1], " y ", finalVirus, '.', sep = '', collapse = '')) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = aminoacidPercentage), vjust = 1, hjust=2, colour = "white") +
+  theme(legend.position = "bottom") +
+  theme(axis.title=element_text(size=10,face="bold")) +
+  coord_flip();
+
+graphic4a = ggplot(similarity[similarity$originVirus==originVirus[1] & similarity$gene=='S', ], aes(x = finalVirus, y = aminoacidPercentage, fill = type)) +
+  ggtitle(paste("Porcentaje de similitud del gen S de ", originVirus[1], '.', sep = '', collapse = '')) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = aminoacidPercentage), vjust = 1, hjust=2, colour = "white") +
+  theme(legend.position = "bottom") +
+  theme(axis.title=element_text(size=10,face="bold")) +
+  coord_flip();
+
+graphic5a = ggplot(similarity[similarity$originVirus==originVirus[1] & similarity$gene=='N', ], aes(x = finalVirus, y = aminoacidPercentage, fill = type)) +
+  ggtitle(paste("Porcentaje de similitud del gen N de ", originVirus[1], '.', sep = '', collapse = '')) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = aminoacidPercentage), vjust = 1, hjust=2, colour = "white") +
+  theme(legend.position = "bottom") +
+  theme(axis.title=element_text(size=10,face="bold")) +
+  coord_flip();
+
+graphic6a = ggplot(similarity[similarity$originVirus==originVirus[1] & similarity$gene=='M', ], aes(x = finalVirus, y = aminoacidPercentage, fill = type)) +
+  ggtitle(paste("Porcentaje de similitud del gen M de ", originVirus[1], '.', sep = '', collapse = '')) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = aminoacidPercentage), vjust = 1, hjust=2, colour = "white") +
+  theme(legend.position = "bottom") +
+  theme(axis.title=element_text(size=10,face="bold")) +
+  coord_flip();
+
+graphic7a = ggplot(similarity[similarity$originVirus==originVirus[1] & similarity$gene=='E', ], aes(x = finalVirus, y = aminoacidPercentage, fill = type)) +
+  ggtitle(paste("Porcentaje de similitud del gen E de ", originVirus[1], '.', sep = '', collapse = '')) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = aminoacidPercentage), vjust = 1, hjust=2, colour = "white") +
+  theme(legend.position = "bottom") +
+  theme(axis.title=element_text(size=10,face="bold")) +
+  coord_flip();
+
+graphic1b = ggplot(mutations2) + 
+  aes(x=mutation, fill=mutation, label=..count..) +
+  ggtitle(paste("Diferencias totales entre ", originVirus[2], " y ", finalVirus, '.', sep = '', collapse = '')) +
+  labs(x="Diferencia (pseudomutación).", y="Frecuencia.", fill="Pseudomutaciones.") +
+  geom_bar(stat = "count") +
+  geom_text(stat = "count", aes(vjust=1)) +
+  theme(axis.title=element_text(size=10,face="bold"));
+
+graphic2b = ggplot(mutations2[mutations$change==TRUE, ]) + 
+  aes(x=mutation, fill=mutation, label=..count..) + 
+  ggtitle(paste("Diferencias significativas entre ", originVirus[2], " y ", finalVirus, '.', sep = '', collapse = '')) + 
+  labs(x="Diferencia (pseudomutación).", y="Frecuencia.", fill="Pseudomutaciones.") + 
+  geom_bar(stat = "count") + 
+  geom_text(stat = "count", aes(vjust=1)) + 
+  theme(axis.title=element_text(size=10,face="bold"));
+
+graphic3b = ggplot(similarity[similarity$nucleotidePercentage>0 & similarity$originVirus==originVirus[2], ], aes(x = gene, y = aminoacidPercentage, fill = type)) +
+  ggtitle(paste("Porcentaje de similitud de genes estructurales entre ", originVirus[2], " y ", finalVirus, '.', sep = '', collapse = '')) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = aminoacidPercentage), vjust = 1, hjust=2, colour = "white") +
+  theme(legend.position = "bottom") +
+  theme(axis.title=element_text(size=10,face="bold")) +
+  coord_flip();
+
+graphic4b = ggplot(similarity[similarity$originVirus==originVirus[2] & similarity$gene=='S', ], aes(x = finalVirus, y = aminoacidPercentage, fill = type)) +
+  ggtitle(paste("Porcentaje de similitud del gen S de ", originVirus[2], '.', sep = '', collapse = '')) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = aminoacidPercentage), vjust = 1, hjust=2, colour = "white") +
+  theme(legend.position = "bottom") +
+  theme(axis.title=element_text(size=10,face="bold")) +
+  coord_flip();
+
+graphic5b = ggplot(similarity[similarity$originVirus==originVirus[2] & similarity$gene=='N', ], aes(x = finalVirus, y = aminoacidPercentage, fill = type)) +
+  ggtitle(paste("Porcentaje de similitud del gen N de ", originVirus[2], '.', sep = '', collapse = '')) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = aminoacidPercentage), vjust = 1, hjust=2, colour = "white") +
+  theme(legend.position = "bottom") +
+  theme(axis.title=element_text(size=10,face="bold")) +
+  coord_flip();
+
+graphic6b = ggplot(similarity[similarity$originVirus==originVirus[2] & similarity$gene=='M', ], aes(x = finalVirus, y = aminoacidPercentage, fill = type)) +
+  ggtitle(paste("Porcentaje de similitud del gen M de ", originVirus[2], '.', sep = '', collapse = '')) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = aminoacidPercentage), vjust = 1, hjust=2, colour = "white") +
+  theme(legend.position = "bottom") +
+  theme(axis.title=element_text(size=10,face="bold")) +
+  coord_flip();
+
+graphic7b = ggplot(similarity[similarity$originVirus==originVirus[2] & similarity$gene=='E', ], aes(x = finalVirus, y = aminoacidPercentage, fill = type)) +
+  ggtitle(paste("Porcentaje de similitud del gen E de ", originVirus[2], '.', sep = '', collapse = '')) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = aminoacidPercentage), vjust = 1, hjust=2, colour = "white") +
+  theme(legend.position = "bottom") +
+  theme(axis.title=element_text(size=10,face="bold")) +
+  coord_flip();
+
+save.image("analysis.RData");
+```
+
+___
+
+## Bibliografía.
+
+1. Jiang S., Shi Z.L. The first disease X is caused by a highly transmissible acute respiratory syndrome coronavirus. Virologia Sinica. 2020 doi: 10.1007/s12250-020-00206-5. [PMC free article] [PubMed] [CrossRef] [Google Scholar].
+
+2. Velavan T.P., Meyer C.G. The Covid-19 epidemic. Trop Med Int Health. 2020;25 doi: 10.1111/TMI.13383. [PMC free article] [PubMed] [CrossRef] [Google Scholar].
+
+3. Hui D.S., Azhar E.I., Madani T.A., Ntoumi F., Kock R., Dar O. The continuing 2019-nCoV epidemic threat of novel coronaviruses to global health. The latest 2019 novel coronavirus outbreak in Wuhan, China. Int J Infect Dis. 2020;91:264–266. doi: 10.1016/j.ijid.2020.01.009. [PMC free article] [PubMed] [CrossRef] [Google Scholar].
+
+4. Emerging understandings of 2019-nCoV. Lancet. 2020;395:P311. doi: 10.1016/S0140-6736(20)30186-0. [PMC free article] [PubMed] [CrossRef] [Google Scholar].
+
+5. Gralinski L.E., Menachery V.D. Return of the coronavirus: 2019-nCoV. Viruses. 2020;12:135. doi: 10.3390/v12020135. [PMC free article] [PubMed] [CrossRef] [Google Scholar].
+
+6. Perlman S. Another decade, another coronavirus. N Engl J Med. 2020;382:760–762. doi: 10.1056/NEJMe2001126. [PMC free article] [PubMed] [CrossRef] [Google Scholar].
+
+7. Zhou P., Yang X.L., Wang X.G., Hu B., Zhang L., Zhang W. Discovery of a novel coronavirus associated with the recent pneumonia outbreak in humans and its potential bat origin. BioRxiv. 2020 doi: 10.1101/2020.01.22.914952. [CrossRef] [Google Scholar].
+
+8. Guarner J. Three emerging coronaviruses in two decades. Am J Clin Pathol. 2020;153:420–421. doi: 10.1093/ajcp/aqaa029. [PMC free article] [PubMed] [CrossRef] [Google Scholar].
+
+9. Jiang X., Rayner S., Luo M.H. Does SARS-CoV-2 has a longer incubation period tan SARS and MERS? J Med Virol. 2020 doi: 10.1002/jmv.25708. [PMC free article] [PubMed] [CrossRef] [Google Scholar].
+
+10. Thompson R.N. Novel coronavirus outbreak in Wuhan China 2020 intense surveillance is vital for preventing sustained transmission in new locations. J Clin Med. 2020;9:498. doi: 10.3390/jcm9020498. [PMC free article] [PubMed] [CrossRef] [Google Scholar].
+
+11. Liu S.L., Saif L. Emerging viruses without borders: the Wuhan coronavirus. Viruses. 2020;12:130. doi: 10.3390/v12020130. [PMC free article] [PubMed] [CrossRef] [Google Scholar].
+
+12. Cui J., Li F., Shi Z.L. Origin and evolution of pathogenic coronaviruses. Nature Rev. 2019;17:181–192. doi: 10.1038/s41579-018-0118-9. [PMC free article] [PubMed] [CrossRef] [Google Scholar].
+
+13. Lu R., Zhao X., Li J., Niu P., Yang B., Wu H. Genomic characterisation and epidemiology of 2019 novel coronavirus: implications for virus origins and receptor binding. Lancet. 2020 doi: 10.1016/S0140-6736(20)30251-8. [PMC free article] [PubMed] [CrossRef] [Google Scholar].
+
+14. Zhou P., Yang X.L., Wang X.G., Hu B., Zhang L., Zhang W. A pneumonia outbreak associated with a new coronavirus of probable bat origin. Nature. 2020 doi: 10.1038/s41586-020-2012-7. [PMC free article] [PubMed] [CrossRef] [Google Scholar].
+
+15. Chan J., Yuan S., Kok K., To K., Chu H., Yang J. A familial cluster of pneumonia associated with the 2019 novel coronavirus indicating person-to-person transmission: a study of a family cluster. Lancet. 2020;395:514–523. doi: 10.1016/s0140-6736(20)30154-9. [PMC free article] [PubMed] [CrossRef] [Google Scholar].
+
+16. Wan Y., Shang J., Graham R., Baric R.S., Li F. Receptor recognition by novel coronavirus from Wuhan: an analysis based on decade-long structural studies of SARS. J Virol. 2020 doi: 10.1128/JVI.00127-20. [PMC free article] [PubMed] [CrossRef] [Google Scholar].
+
+17. Ji W., Wang W., Zhao X., Zai J., Li X. Homologous recombination within the spike glycoprotein of the newly identified coronavirus 2019-nCoV may boost cross-species transmission from snake to human. J Med Virol. 2020 doi: 10.1002/jmv.25682. [PMC free article] [PubMed] [CrossRef] [Google Scholar].
+
+18. Munster V.J., Koopmans M., van Doremalen N., van Riel D., de Wit E. A novel coronavirus emerging in China. Key questions for impact assessment. N Engl J Med. 2020;382:692–694. doi: 10.1056/NEJMp2000929. [PubMed] [CrossRef] [Google Scholar].
+
+19. Li X., Zai J., Wang X., Li Y. Potential of large “first generation” human-to-human transmission of 2019-nCoV. J Med Virol. 2020;92:1–7. doi: 10.1002/jmv.25693. [PMC free article] [PubMed] [CrossRef] [Google Scholar].
+
+20. Xu Z., Wang Y., Zhang J., Huang L., Zhang C., Liu S. Pathological findings of COVID-19 associate with acute respiratory distress syndrome. Lancet. 2020 doi: 10.1016/s2213-2600(20)30076-X. [PMC free article] [PubMed] [CrossRef] [Google Scholar].
+
+21. Zhu N., Zhang D., Wang W., Li X., Yang B., Song J.X. A novel coronavirus from patients with pneumonia in China, 2019. N Engl J Med. 2020;382:727–733. doi: 10.1056/NEJMoa2001017. [PMC free article] [PubMed] [CrossRef] [Google Scholar].
+
+22. Chen N., Zhou M., Dong X., Qu F., Gong F., Han Y. Epidemiological and clinical characteristics of 99 cases of 2019 novel coronavirus pneumonia in Wuhan, China: a descriptive study. Lancet. 2020;395:507–513. doi: 10.1016/s0140-6736(20)30211-7. [PMC free article] [PubMed] [CrossRef] [Google Scholar].
+
+23. Robertson D, Jiang X. nCoV's relationship to bat coronaviruses and recombination signals no snakes [consultado 23 Ene 2020]. Disponible en: https://virological.org/t/ncovs-relationship-to-bat-coronaviruses-recombination-signals-no-snakes/331
+24. Lam T.T.Y., Shum M.H., Zhu H.C., Tong Y.G., Ni X.B., Liao Y.S. Identification of 2019-nCoV related coronaviruses in Malayan pangolins in southern China. BioRxiv. 2020 doi: 10.1101/2020.02.13.945485. [PubMed] [CrossRef] [Google Scholar].
+
+25. World Health Organization. Novel coronavirus (2019-nCoV) technical guidance; 2020 [consultado 3 Feb 2020]. Disponible en: https://www.who.int/emergencies/diseases/novel-coronavirus-2019/technical-guidance
+
+26. Zhang W., Du R.H., Li B., Zheng X.S., Yang X.L., Hu B. Molecular and serological investigation of 2019-nCoV infected patients: implication of multiple shedding routes. Emerg Microb Infect. 2020;9:386–389. doi: 10.1080/22221751.2020.1729071. [PMC free article] [PubMed] [CrossRef] [Google Scholar].
+
+27. Chen H., Guo J., Wang C., Luo F., Yu X., Zhang W. Clinical characteristics and intrauterina vertical transmission potential of COVID-19 infection in nine pregnant women: a retrospective review of medical records. Lancet. 2020;395:809–815. doi: 10.1016/s0140-6736(20)30360-3. [PMC free article] [PubMed] [CrossRef] [Google Scholar].
+
+28. Huang C., Wang Y., Li X., Ren L., Zhao J., Hu Y. Clinical features of patients with 2019 novel coronavirus in Wuhan, China. Lancet. 2020;395:497–506. doi: 10.1016/s0140-6736(20)30183-5. [PMC free article] [PubMed] [CrossRef] [Google Scholar].
+
+29. The novel coronavirus pneumonia emergency response epidemiology team. Vital surveillances: the epidemiological characteristics of an outbreak of 2019 novel coronavirus diseases (COVID-19). China, 2020. China CDC Weekly. 2020; 2(8):113-122.
+
+30. Zou L.Z., Ruan F., Huang M., Liang L., Huang H., Hong Z. SARS-CoV-2 viral load in upper respiratory specimens of infected patients. N Engl J Med. 2020 doi: 10.1056/NEJMc2001737. [PMC free article] [PubMed] [CrossRef] [Google Scholar].
+
+31. Feng K., Yun Y.X., Wand X.F., Yang G.D., Zheng Y.J., Lin C.M. Analysis of CT features of 15 children with 2019 novel coronavirus infection. Zhonghua Er Ke Za Zhi. 2020;58:E007. doi: 10.3760/cma.j.issn.0578-1310.2020.0007. [PubMed] [CrossRef] [Google Scholar].
+
+32. Rivers T.M. Viruses and Koch's postulates. J Bacteriol. 1937;33:1–12. PMID 16559982. [PMC free article] [PubMed] [Google Scholar].
+
+33. Wang M., Cao R., Zhang L., Yang X., Liu J., Xu M. Remdesivir and chloroquine effectively inhibit the recently emerged novel coronavirus (2019-nCoV) in vitro. Cell Res. 2020;30:269–271. doi: 10.1038/s41422-020-0282-0. [PMC free article] [PubMed] [CrossRef] [Google Scholar].
+
+34. De Witt E., Feldmann F., Cronin J., Jordan R., Okumura A., Thomas T. Prophylactic and therapeutic remdesivir (GS-5734) treatment in the Rhesus macaque model of MERS-CoV infection. PNAS. 2020 doi: 10.1073/pnas.1922083117. [PMC free article] [PubMed] [CrossRef] [Google Scholar].
+
+35. Lu H. Drug treatment options for the 2019-new coronavirus (2019-nCoV) BioSci Trends. 2020 doi: 10.5582/bst.2020.01020. [PubMed] [CrossRef] [Google Scholar].
