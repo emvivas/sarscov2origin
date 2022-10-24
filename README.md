@@ -1,5 +1,5 @@
 # sarscov2origin
 
-##Análisis del origen de SARS-COV 2, ¿cómo pudo haber comenzado esta pandemia?
+## Análisis del origen de SARS-COV 2, ¿cómo pudo haber comenzado esta pandemia?
 
 El 31 de diciembre de 2019 se detectó en la ciudad de Wuhan (China) un brote de neumonía de etiología desconocida. Una semana después se aisló en estos pacientes un nuevo coronavirus, designado inicialmente como 2019-nCoV y posteriormente, SARS-CoV-2. Este es un nuevo virus que está mucho más próximo genéticamente a los coronavirus de los murciélagos que del SARS humano. Mediante la aplicación de cruciales recursos ingenieriles (tales como: el algoritmo de alineación de secuencias genéticas Needleman - Wunsch, el uso de la matriz PAM250 y la participación del algoritmo de la distancia de Levenshtein), fue posible comparar diversos virus de los que se creía que SARS-COV 2 derivaba. Tras las conclusiones de esta investigación, no cabe duda que RaTG13 está emparentado con SARS-COV 2, esto es un hito considerable para descifrar el árbol filogenético que representa a este nuevo virus recién descubierto.
